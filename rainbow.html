@@ -7,13 +7,19 @@
     <title>Maksim's Rainbow</title>
     <style>
         .root-section {
-            width: 56em;
+            width: 36em;
             margin: 3em auto 0 auto;
             text-align: center;
             /* background-color: aqua; */
             background: rgb(2, 0, 36);
             background: linear-gradient(45deg, rgba(2, 0, 56, 1) 0%, rgba(8, 8, 100, 1) 6%, rgba(0, 212, 255, 1) 73%);
             position: relative;
+        }
+
+        @media screen and (min-width: 880px) {
+            .root-section {
+                width: 56em;
+            }
         }
 
         .sun {
@@ -41,8 +47,6 @@
             }
         }
 
-
-
         .rainbow-host {
             height: 24em;
             position: relative;
@@ -59,20 +63,8 @@
                     red 60%, red 65%,
                     rgba(0, 0, 0, 0) 67%, rgba(0, 0, 0, 0) 100%);
 
-            animation: show-rainbow 7s ease-in forwards;
+            animation: show-rainbow 6s ease forwards;
             /*animation-fill-mode: forwards;*/
-        }
-
-        @keyframes show-rainbow2 {
-            0% {
-                visibility: hidden;
-            }
-
-            100% {
-                visibility: visible
-            }
-
-            ;
         }
 
         @keyframes show-rainbow {
@@ -88,7 +80,6 @@
 
         h1 {
             font-size: 4em;
-            /* background-color: greenyellow; */
             text-align: center;
             margin: 0;
         }
@@ -184,14 +175,14 @@
             <span id="днём" class="invisible">Днём</span>
             <span id="рождения">
                 <span id="рож" class="invisible">Рож</span><span id="де" class="invisible">де</span><span id="ния"
-                    class="invisible">ния!</span>
+                    class="invisible">ния</span>
             </span>
         </h1>
         <div class="rainbow-host">
         </div>
         <h1>
             <span id="Любимый" class="invisible">Любимый</span>
-            <span id="Максим" class="invisible">Максим</span>
+            <span id="Максим" class="invisible">Максим!</span>
         </h1>
     </section>
 
