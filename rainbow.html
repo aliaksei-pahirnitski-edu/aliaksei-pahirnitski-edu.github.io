@@ -26,9 +26,65 @@
             width: 6em;
         }
 
+        .sun>img:hover {
+            /* transform: rotate(15deg);*/
+            animation: rotate-sun 3ms ease-in;
+        }
+
+        @keyframes rotate-sun {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(10deg);
+            }
+        }
+
+
+
         .rainbow-host {
             height: 24em;
+            position: relative;
+            opacity: 0;
+
+            background: radial-gradient(ellipse farthest-corner at 80% 110%,
+                    rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%,
+                    violet 31%, violet 35%,
+                    indigo 35%, indigo 40%,
+                    blue 40%, blue 45%,
+                    green 45%, green 50%,
+                    yellow 50%, yellow 55%,
+                    orange 55%, orange 60%,
+                    red 60%, red 65%,
+                    rgba(0, 0, 0, 0) 67%, rgba(0, 0, 0, 0) 100%);
+
+            animation: show-rainbow 7s ease-in forwards;
+            /*animation-fill-mode: forwards;*/
         }
+
+        @keyframes show-rainbow2 {
+            0% {
+                visibility: hidden;
+            }
+
+            100% {
+                visibility: visible
+            }
+
+            ;
+        }
+
+        @keyframes show-rainbow {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
 
         h1 {
             font-size: 4em;
@@ -62,7 +118,8 @@
         }
 
         #Любимый {
-            color: pink
+            /* color: pink*/
+            color: gold;
         }
 
         #Максим {
@@ -92,6 +149,29 @@
                     #1e90ff 50%,
                     beige);
         }
+
+        .multi-repeating-linear {
+            background: repeating-linear-gradient(190deg,
+                    rgba(255, 0, 0, 0.5) 40px,
+                    rgba(255, 153, 0, 0.5) 80px,
+                    rgba(255, 255, 0, 0.5) 120px,
+                    rgba(0, 255, 0, 0.5) 160px,
+                    rgba(0, 0, 255, 0.5) 200px,
+                    rgba(75, 0, 130, 0.5) 240px,
+                    rgba(238, 130, 238, 0.5) 280px,
+                    rgba(255, 0, 0, 0.5) 300px),
+                repeating-linear-gradient(-190deg,
+                    rgba(255, 0, 0, 0.5) 30px,
+                    rgba(255, 153, 0, 0.5) 60px,
+                    rgba(255, 255, 0, 0.5) 90px,
+                    rgba(0, 255, 0, 0.5) 120px,
+                    rgba(0, 0, 255, 0.5) 150px,
+                    rgba(75, 0, 130, 0.5) 180px,
+                    rgba(238, 130, 238, 0.5) 210px,
+                    rgba(255, 0, 0, 0.5) 230px),
+
+                repeating-linear-gradient(23deg, red 50px, orange 100px, yellow 150px, green 200px, blue 250px, indigo 300px, violet 350px, red 370px);
+        }
     </style>
 </head>
 
@@ -108,7 +188,6 @@
             </span>
         </h1>
         <div class="rainbow-host">
-            <div id="red">red</div>
         </div>
         <h1>
             <span id="Любимый" class="invisible">Любимый</span>
