@@ -7,10 +7,23 @@
     <title>Maksim's Rainbow</title>
     <style>
         .root-section {
-            width: 60em;
+            width: 56em;
             margin: 3em auto 0 auto;
-            background-color: aqua;
             text-align: center;
+            /* background-color: aqua; */
+            background: rgb(2, 0, 36);
+            background: linear-gradient(45deg, rgba(2, 0, 56, 1) 0%, rgba(8, 8, 100, 1) 6%, rgba(0, 212, 255, 1) 73%);
+            position: relative;
+        }
+
+        .sun {
+            position: absolute;
+            right: -6.5em;
+            top: 1em;
+        }
+
+        .sun>img {
+            width: 6em;
         }
 
         .rainbow-host {
@@ -19,9 +32,13 @@
 
         h1 {
             font-size: 4em;
-            background-color: greenyellow;
+            /* background-color: greenyellow; */
             text-align: center;
-            /* margin: 0; */
+            margin: 0;
+        }
+
+        .invisible {
+            visibility: hidden;
         }
 
         #с {
@@ -29,7 +46,7 @@
         }
 
         #днём {
-            color: orange
+            color: darksalmon
         }
 
         #рождения {
@@ -43,30 +60,87 @@
         #днём {
             color: orange
         }
+
+        #Любимый {
+            color: pink
+        }
+
+        #Максим {
+            color: red
+        }
+
+        .nice-border-top {
+            border-top: 5px dashed orange;
+        }
+
+        .nice-border-bottom {
+            border-bottom: 5px dashed orange;
+        }
+
+        .nice-border-left {
+            border-left: 5px dashed orange;
+        }
+
+        .nice-border-right {
+            border-right: 5px dashed orange;
+        }
+
+        .radial-ellipse-far {
+            background: radial-gradient(ellipse farthest-corner at 90% 90%,
+                    red,
+                    yellow 10%,
+                    #1e90ff 50%,
+                    beige);
+        }
     </style>
 </head>
 
 <body>
 
     <section class="root-section">
+        <div class="sun" onclick="document.location.reload()"><img src="/assets/images/sun.png" alt="Sun" /></div>
         <h1>
-            <span id="с">C</span>
-            <span id="днём">Днём</span>
+            <span id="с" class="invisible">C</span>
+            <span id="днём" class="invisible">Днём</span>
             <span id="рождения">
-                <span id="рож">Рож</span>
-                <span id="де">де</span>
-                <span id="ния">ния!</span>
+                <span id="рож" class="invisible">Рож</span><span id="де" class="invisible">де</span><span id="ния"
+                    class="invisible">ния!</span>
             </span>
         </h1>
         <div class="rainbow-host">
             <div id="red">red</div>
         </div>
         <h1>
-            <span id="Любимый">Любимый</span>
-            <span id="Максим">Максим</span>
+            <span id="Любимый" class="invisible">Любимый</span>
+            <span id="Максим" class="invisible">Максим</span>
         </h1>
     </section>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            console.log("starting congratulation");
+            congratAnimation();
+        });
+
+        function congratAnimation() {
+            const rootSection = document.querySelector('.root-section');
+            console.log("rootSection=", rootSection);
+            // border
+            window.setTimeout(() => rootSection.classList.add('nice-border-top'), 150);
+            window.setTimeout(() => rootSection.classList.add('nice-border-right'), 300);
+            window.setTimeout(() => rootSection.classList.add('nice-border-bottom'), 450);
+            window.setTimeout(() => rootSection.classList.add('nice-border-left'), 600);
+            // text 
+            window.setTimeout(() => document.getElementById('с').classList.remove('invisible'), 500);
+            window.setTimeout(() => document.getElementById('днём').classList.remove('invisible'), 750);
+            window.setTimeout(() => document.getElementById('рож').classList.remove('invisible'), 1050);
+            window.setTimeout(() => document.getElementById('де').classList.remove('invisible'), 1350);
+            window.setTimeout(() => document.getElementById('ния').classList.remove('invisible'), 1650);
+            window.setTimeout(() => document.getElementById('Любимый').classList.remove('invisible'), 2100);
+            window.setTimeout(() => document.getElementById('Максим').classList.remove('invisible'), 2700);
+        }
+
+    </script>
 </body>
 
 </html>
